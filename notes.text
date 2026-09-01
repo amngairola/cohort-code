@@ -52,3 +52,61 @@ Internal CSS	<style> tag in <head>	Single webpage	Small websites or single pages
 External CSS	Separate .css file	Multiple webpages	Large websites (recommended)
 
 Most commonly used: External CSS, because it keeps HTML and CSS separate, making websites easier to maintain.
+
+
+
+//--------GIT 
+These cover most daily work:
+
+git init
+
+Start Git in a project.
+
+git clone <url>
+
+Download an existing GitHub project.
+
+git status
+
+See what changed.
+
+git add .
+
+Stage all changes.
+
+git commit -m "message"
+
+Save changes to Git history.
+
+git push
+
+Upload your commits to GitHub.
+
+git pull
+
+Get the latest changes from GitHub.
+
+git branch
+
+See your branches.
+
+git switch -c feature-name
+
+Create and switch to a new branch.
+
+git switch main
+
+Switch back to the main branch.
+
+Remember this workflow
+git pull
+   ↓
+Make changes
+   ↓
+git status
+   ↓
+git add .
+   ↓
+git commit -m "message"
+   ↓
+git push
