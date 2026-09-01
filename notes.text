@@ -1,0 +1,54 @@
+CSS (Cascading Style Sheets) can be applied to HTML in three main ways:
+
+Inline CSS
+Applied directly to an HTML element using the style attribute.
+Affects only that specific element.
+
+Example:
+
+<p style="color: blue; font-size: 20px;">Hello World</p>
+Internal (Embedded) CSS
+Written inside a <style> tag within the <head> section of an HTML document.
+Applies styles to the current page only.
+
+Example:
+
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        p {
+            color: blue;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <p>Hello World</p>
+</body>
+</html>
+External CSS
+Stored in a separate .css file and linked to the HTML document using the <link> tag.
+Best practice for styling multiple web pages.
+
+Example:
+
+HTML:
+
+<head>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+styles.css:
+
+p {
+    color: blue;
+    font-size: 20px;
+}
+Summary
+Type	Location	Scope	Best Use
+Inline CSS	style attribute	Single element	Quick, one-time styling
+Internal CSS	<style> tag in <head>	Single webpage	Small websites or single pages
+External CSS	Separate .css file	Multiple webpages	Large websites (recommended)
+
+Most commonly used: External CSS, because it keeps HTML and CSS separate, making websites easier to maintain.

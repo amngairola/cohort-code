@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css" />
+    <!-- <script src="index.js"></script> -->
+  </head>
+  <body>
+    <h1 class="title" id="h-1">this is heading 1</h1>
+
+    <p class="heading">h1 page is working</p>
+
+    <!-- <img class="image" src="./image.png" alt="image" /> -->
+
+    <ul name="lists" class="list">
+      <li>cpp</li>
+      <li>java</li>
+      <li>python</li>
+    </ul>
+
+    <input
+      type="text"
+      name="childName"
+      id="childName"
+      placeholder="enter child tag name"
+    />
+    <input
+      type="text"
+      name="chlidText"
+      id="chlidText"
+      placeholder="enter child text"
+    />
+
+    <button id="btn">click me</button>
+  </body>
+  <script>
+    //const parent = document.querySelector(".list");
+    // <!-- document.getElementById();
+    //  document.getElementsByClassName();
+    // document.getElementsByName();
+    //  document.getElementsByTagName(); -->
+
+    // DRY =   dont repeat yourslef
+
+    const tagName = document.querySelector("#childName");
+
+    const tagText = document.querySelector("#chlidText");
+
+    //const btn = document.querySelector("#btn");
+
+    // event handler method  (callback method)
+    // function checkClicked() {
+    //   console.log("btn clicked");
+    // }
+
+    //btn.addEventListener("click", checkClicked);
+
+    //btn.addEventListener("click", function () {
+    ///  checkClicked();
+    //});
+
+    //checkClicked(); // exicute metho
+    //another way
+
+    //btn.addEventListener("click", function checkClicked() {
+    //   console.log("btn clicked");
+    //});
+
+    const parent = document.querySelector(".list");
+
+    const btn = document.querySelector("#btn");
+
+    btn.addEventListener("click", () => {
+      console.log("btn clicked");
+      const childName = tagName.value;
+      const text = tagText.value;
+
+      // addNewChild();
+      addNewChild(childName, text);
+    });
+
+    function addNewChild(childName, text) {
+      console.log("function get called ");
+      const child = document.createElement(`${childName}`);
+      console.log("child creted");
+
+      child.innerText = `${text}`;
+      console.log("inner text assigned");
+
+      parent.appendChild(child);
+      console.log("append to parent node");
+    }
+  </script>
+</html>
