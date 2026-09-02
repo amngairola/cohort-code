@@ -9,3 +9,9 @@
   height: 220px;
   width: 200px;
 }
+
+#parent {
+  background-color: rgb(132, 40, 40);
+  width: 200px;
+  height: 200px;
+}

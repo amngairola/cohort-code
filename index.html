@@ -20,7 +20,7 @@
       <li>python</li>
     </ul>
 
-    <input
+    <!-- </body><input
       type="text"
       name="childName"
       id="childName"
@@ -33,9 +33,57 @@
       placeholder="enter child text"
     />
 
-    <button id="btn">click me</button>
+    <button id="btn">click me</button> -->
+    <h1>my form</h1>
+    <!-- <form id="myForm">
+      <input type="text" id="name" placeholder="Enter name" />
+      <input
+        name="emailInput"
+        type="email"
+        id="email"
+        placeholder="Enter email"
+      />
+ </form>
+      <button type="submit">Submit</button> -->
+
+    <div id="parent">
+      <button type="submit" id="red">red</button>
+
+      <button type="submit" id="blue">blue</button>
+
+      <button type="submit" id="green">green</button>
+      <button type="submit" id="pink">pink</button>
+
+      <button type="submit" id="black">black</button>
+
+      <button type="submit" id="white">white</button>
+    </div>
   </body>
   <script>
+    const parent = document.getElementById("parent");
+
+    // e = event (automatically get the event as parameter)
+
+    parent.addEventListener("mouseover", (e) => {
+      console.log(e.target.id);
+      parent.style.background = e.target.id;
+    });
+
+    //-------------
+    const form = document.getElementById("myForm");
+    const emailInput = document.getElementById("email");
+    const username = document.getElementById("name");
+
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+
+      const email = emailInput.value.trim();
+      console.log(email);
+      const name = username.value.trim();
+      console.log(name);
+      console.log("Form submitted without page reload");
+    });
+
     //const parent = document.querySelector(".list");
     // <!-- document.getElementById();
     //  document.getElementsByClassName();
@@ -44,9 +92,9 @@
 
     // DRY =   dont repeat yourslef
 
-    const tagName = document.querySelector("#childName");
+    //const tagName = document.querySelector("#childName");
 
-    const tagText = document.querySelector("#chlidText");
+    // const tagText = document.querySelector("#chlidText");
 
     //const btn = document.querySelector("#btn");
 
@@ -68,30 +116,30 @@
     //   console.log("btn clicked");
     //});
 
-    const parent = document.querySelector(".list");
+    //const parent = document.querySelector(".list");
 
-    const btn = document.querySelector("#btn");
+    // const btn = document.querySelector("#btn");
 
-    btn.addEventListener("click", () => {
-      console.log("btn clicked");
-      const childName = tagName.value;
-      const text = tagText.value;
+    //btn.addEventListener("click", () => {
+    //console.log("btn clicked");
+    //const childName = tagName.value;
+    //const text = tagText.value;
 
-      // addNewChild();
-      addNewChild(childName, text);
-    });
+    // addNewChild();
+    // addNewChild(childName, text);
+    // });
 
-    function addNewChild(childName, text) {
-      console.log("function get called ");
-      const child = document.createElement(`${childName}`);
-      console.log("child creted");
+    // function addNewChild(childName, text) {
+    console.log("function get called ");
+    //const child = document.createElement(`${childName}`);
+    //console.log("child creted");
 
-      child.innerText = `${text}`;
-      console.log("inner text assigned");
+    // child.innerText = `${text}`;
+    console.log("inner text assigned");
 
-      parent.appendChild(child);
-      console.log("append to parent node");
-    }
+    //parent.appendChild(child);
+    console.log("append to parent node");
+    // }
 
     //git remote add origin https://github.com/amngairola/cohort-code.git
 
