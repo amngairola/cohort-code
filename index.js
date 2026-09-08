@@ -20,7 +20,7 @@
             js(); - executes function invocations (calls)
 
 */
-debugger;
+// debugger;
 console.log(first); //undefined
 console.log(js1); //js1 full code
 // console.log(a); // not defined
@@ -31,7 +31,7 @@ js1(); //js1 called
 var first = 10; // first = undifined
 var second = 10;
 
-debugger;
+// debugger;
 function js1(a, b) {
   //local variables
   let name = "this is my name";
@@ -54,11 +54,11 @@ let js4 = (a, b) => {
 };
 
 //console.log(sum)
-debugger;
+// debugger;
 var res = js1(first, second);
 console.log(res);
 
-debugger;
+// debugger;
 js2();
 
 // var  -> as a variable treat  -> undifined
