@@ -95,17 +95,66 @@
 
 // --------- closer -> A closure is created when a function remembers and continues to access variables from its outer (lexical) scope, even after the outer function has finished execution.
 
-function outer() {
-  let count = 0;
+// function outer() {
+//   let count = 0;
 
-  return function inner() {
-    count++;
-    console.log(count);
-  };
+//   return function inner() {
+//     count++;
+//     console.log(count);
+//   };
+// }
+
+// let outerRes = outer();
+
+// console.log(outerRes);
+
+// outerRes();
+// outerRes();
+// outerRes();
+
+// let name = "aman";
+
+//---------settimeout
+
+console.log("A");
+
+// setInterval(() => {
+//   console.log("B");
+// }, 2000);
+
+console.log("C");
+
+setTimeout(() => {
+  console.log("B");
+}, 1000);
+
+setTimeout(() => {
+  console.log("D");
+}, 1000);
+setTimeout(() => {
+  console.log("E");
+}, 5000);
+setTimeout(() => {
+  console.log("F");
+}, 7000);
+
+function x() {
+  for (let i = 1; i <= 10; i++) {
+    // setTimeout(function () {
+
+    // }, i * 1000);
+    console.log(i);
+    // close(i);
+  }
+}
+x();
+
+function a(b) {
+  setTimeout(() => {
+    b();
+  }, 2000);
 }
 
-let outerRes = outer();
-
-outerRes();
-outerRes();
-outerRes();
+a(function () {
+  console.log("this is funtion b");
+});

@@ -6,6 +6,11 @@
   "bugs": {
     "url": "https://github.com/amngairola/cohort-code/issues"
   },
+  "scripts": {
+    "dev": "nodemon scope.js",
+    "start": "node server.js",
+    "test": "jest"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/amngairola/cohort-code.git"
@@ -14,9 +19,6 @@
   "author": "",
   "type": "module",
   "main": "scope.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "dependencies": {
     "nodemon": "^3.1.14"
   }
