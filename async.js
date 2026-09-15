@@ -58,4 +58,4 @@ const fetcData = async (username) => {
   }
 };
 
-fetcData("hkirat");
+fetcData("amngairola");
