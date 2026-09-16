@@ -25,8 +25,16 @@ let notesData = [
     content: "learn GIT GITHUB",
   },
 ];
+// function  to seed your demo data into localStorage when the app first runs
+(function () {
+  const existingNotes = localStorage.getItem("notes");
 
-localStorage.setItem("notes", JSON.stringify(notesData));
+  if (!existingNotes) {
+    displayNotes(notesData);
+  } else {
+    displayNotes(JSON.parse(existingNotes));
+  }
+})();
 
 //cache Memo
 let notes = JSON.parse(localStorage.getItem("notes")) || [];
@@ -43,31 +51,32 @@ displayNotes(SerchedData)
 // filterdData - > sort a-z , sort by album , sort by artis
 displayNotes(filterdData)
 
-
 */
 function displayNotes(displayData = notes) {
   const container = document.getElementById("notesContainer");
-
+  console.log("displaying notes");
   container.innerHTML = "";
 
   displayData.map(
     (note) =>
       (container.innerHTML += `
-    
-    <div key=${note.id} class="">
-        <h2>
-        ${note.title}
-        </h2>
-        <p>
-        ${note.content}
-        </p>
-
-        <button onClick = "deleteNotes(${note.id})">
-            DELETE
-        </button>
-    </div>
-
-    `)
+      <div class="note-card">
+  
+          <div class="note-content">
+              <h3>${note.title}</h3>
+              <p>${note.content}</p>
+          </div>
+  
+          <button
+              
+              class="delete-btn"
+              onclick="deleteNote(${note.id})"
+          >
+              Delete
+          </button>
+  
+      </div>
+  `)
   );
 }
 
@@ -77,12 +86,14 @@ const addButton = document.getElementById("addNoteBtn");
 
 const form = document.getElementById("noteForm");
 
+console.log("form - :", form);
 form.addEventListener("submit", function (e) {
   e.preventDefault();
 
-  const title = document.getElementById("noteTitle").value().trim();
-  const content = document.getElementById("noteContent").value().trim();
-
+  const title = document.getElementById("noteTitle").value.trim();
+  const content = document.getElementById("noteContent").value.trim();
+  console.log(title);
+  console.log(content);
   // validation
   if (!title || !content || title.length == 0 || content.length == 0) {
     console.error("all feilds are required");
@@ -105,9 +116,9 @@ form.addEventListener("submit", function (e) {
 });
 
 //deleteNote
-function deleteNotes(noteId) {
+function deleteNote(noteId) {
   //delete
-
+  console.log("deleting notes");
   notes = notes.filter((note) => note.id != noteId);
 
   localStorage.setItem("notes", JSON.stringify(notes));
@@ -122,8 +133,8 @@ const searchInput = document.getElementById("searchInput");
 // addEventListener
 
 searchInput.addEventListener("input", function () {
-  const ipValue = searchInput.value().toLowerCase();
-
+  const ipValue = searchInput.value.toLowerCase();
+  console.log("searching notes");
   //abc   | abc , AbC
   const filtedData = notes.filter(
     (note) =>
