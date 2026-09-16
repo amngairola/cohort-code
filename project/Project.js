@@ -72,6 +72,9 @@ function displayNotes(displayData = notes) {
 }
 
 //create
+
+const addButton = document.getElementById("addNoteBtn");
+
 const form = document.getElementById("noteForm");
 
 form.addEventListener("submit", function (e) {
